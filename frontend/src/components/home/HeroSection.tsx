@@ -5,6 +5,7 @@ import { useStats } from '../../hooks/useStats';
 import { getGitHubAuthorizeUrl } from '../../api/auth';
 import { useAuth } from '../../hooks/useAuth';
 import { buttonHover, fadeIn } from '../../lib/animations';
+import { AnimatedHeroBackground } from './AnimatedHeroBackground';
 
 const GitHubIcon = () => (
   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -88,10 +89,10 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 pt-24 pb-16 overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-grid-forge bg-grid-forge pointer-events-none" style={{ backgroundSize: '40px 40px' }} />
-      <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
-      <EmberParticles count={5} />
+      {/* Animated Background - Forge Theme */}
+      <AnimatedHeroBackground />
+      {/* Grid overlay for depth */}
+      <div className="absolute inset-0 bg-grid-forge pointer-events-none opacity-30" style={{ backgroundSize: '40px 40px' }} />
 
       {/* Terminal card */}
       <motion.div
